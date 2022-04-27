@@ -30,6 +30,8 @@ questionRouter.post("/", async (req, res, next) => {
             return next(createError(404,"User not found"))
         }
         const question = await Question.create(req.body)
+        author.questions.push(question)
+        await author.save()
         res.send(question)
     } catch (err) {
         next(createError(400, err.message))
