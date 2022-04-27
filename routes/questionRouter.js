@@ -1,6 +1,7 @@
 import express from 'express'
 import createError from 'http-errors'
 import Question from '../models/Question.js'
+import User from '../models/User.js'
 
 const questionRouter = express.Router()
 
@@ -24,6 +25,10 @@ questionRouter.get("/:id", async (req, res, next) => {
 
 questionRouter.post("/", async (req, res, next) => {
     try {
+        const author=await User.findById(req.body.author)
+        if(!author){
+            return next(createError(404,"User not found"))
+        }
         const question = await Question.create(req.body)
         res.send(question)
     } catch (err) {

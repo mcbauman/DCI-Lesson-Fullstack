@@ -16,9 +16,9 @@ POST {{baseUrl}}/questions
 Content-Type: application/json
 
 {
-    "author": "Joel",
-    "title": "Lizard",
-    "content": "Can we have an office lizard please?",
+    "author": "9268f77151c8686e0702f5ab",
+    "title": "a third Question",
+    "content": "okay can i have a visa then?",
     "type": "internal"
 }
 
@@ -43,8 +43,31 @@ POST {{baseUrl}}/users
 Content-Type: application/json
 
 {
-    "username": "admin",
-    "email": "joel@example.org"
+    "username": "Torge",
+    "email": "Torge@example.org",
+    "mainAdress":{
+        "street":"An der Alster",
+        "number":1,
+        "zip":22303,
+        "city":"Hamburg",
+        "country":"Germany"
+    },
+    "altAdress":[
+        {
+        "street":"Skandinavienallee",
+        "number":2,
+        "zip":25479,
+        "city":"Ellerau",
+        "country":"Germany"
+        },
+        {
+        "street":"Untere Dorf",
+        "number":24,
+        "zip":25001,
+        "city":"Beidenfleth",
+        "country":"Germany"
+        }
+    ]
 }
 
 ### Delete a specific user

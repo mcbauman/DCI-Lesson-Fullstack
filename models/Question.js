@@ -6,7 +6,7 @@ const trim = true
 const unique = true
 
 const questionSchema = new Schema({
-    author:   { type: String, required },
+    author:   { type: Schema.Types.ObjectId,ref:"user", required },
     title:    { type: String, required, trim, unique },
     content:  { type: String, required, trim },
     category: { type: String, required, default: "Random" },
