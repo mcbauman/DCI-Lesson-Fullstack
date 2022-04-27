@@ -1,0 +1,51 @@
+@baseUrl = http://localhost:7000
+
+# QUESTIONS ###################################################################
+
+### Get all questions
+GET {{baseUrl}}/questions
+
+### Get all questions that match the parameters
+GET {{baseUrl}}/questions?author=Joel&type=internal
+
+### Get a question with an specific ID
+GET {{baseUrl}}/questions/62681e41c4609379ea66b020
+
+### Create a new question
+POST {{baseUrl}}/questions
+Content-Type: application/json
+
+{
+    "author": "Joel",
+    "title": "Lizard",
+    "content": "Can we have an office lizard please?",
+    "type": "internal"
+}
+
+### Delete a specific question
+DELETE {{baseUrl}}/questions/62681e41c4609379ea66b020
+
+### Update a specific question, changing the title
+PATCH {{baseUrl}}/questions/62681e41c4609379ea66b020
+Content-Type: application/json
+
+{
+    "title": "Can we get a new coffee machine?"
+}
+
+# USERS #######################################################################
+
+### Get all Users
+GET {{baseUrl}}/users
+
+### Create a new user
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "email": "joel@example.org"
+}
+
+### Delete a specific user
+DELETE {{baseUrl}}/users/62682006054117fb24c0a820
